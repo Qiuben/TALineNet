@@ -17,11 +17,11 @@ We have trained and tested our models on CUDA 11.8, Python 3.10.14, torch 1.10.1
 
 For ease of reproducibility, you are suggested to install miniconda (or anaconda if you prefer) before following executing the following commands.
 
-`git clone https://github.com/Qiuben/EvLSD-IED`
+`git clone https://github.com/Qiuben/TALineNet`
 
-`cd EvLSD-IED`
+`cd TALineNet`
 
-`conda create -y -n deoe python=3.9`
+`conda create -y -n TALineNet python=3.9`
 
 `pip install torch==2.1.1 torchvision==0.16.1 torchdata==0.7.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118`
 
