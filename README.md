@@ -8,7 +8,7 @@ Detection in Event Streams”
 - [Training and Testing](#train-test)
 
 ## Dataset
-You can download the synthetic dataset Ev-WireframeSeq as well as the real-scene datset Ev-LineSeq from [OneDrive](https://1drv.ms/f/c/93289205239bc375/IgC0F7BmFkD3RqQo51EgklVGAVn3aSoHt5aeoidAgLjtyMM?e=ANqbof). 
+You can download the synthetic dataset **Ev-WireframeSeq** as well as the real-scene dataset **Ev-LineSeq** from [OneDrive](https://1drv.ms/f/c/93289205239bc375/IgC0F7BmFkD3RqQo51EgklVGAVn3aSoHt5aeoidAgLjtyMM?e=ANqbof). 
 This link provides the event representations, which is ready for direct network processing. If you need the raw event data, please contact us via email.
 
 Put the downloaded datasets to `your_datasets_path`. 
