@@ -27,7 +27,5 @@ For ease of reproducibility, you are suggested to install miniconda (or anaconda
 
 
 
-## Testing Pre-trained Models
-You can download the pretrained model on E-wirferame 
-from [OneDrive](https://1drv.ms/f/c/93289205239bc375/EoSWLjyUd4JDgzARyahZtTcBjfqtTmDchmW_w_GWYltV8A?e=vkLnVt).
+## Training and Testing
 
