@@ -15,7 +15,7 @@ Put the downloaded datasets to `your_datasets_path`.
 
 
 ## Installation
-For ease of reproducibility, you are suggested to install miniconda (or anaconda if you prefer) before executing the following commands.
+For ease of reproducibility, you are suggested to install Miniconda (or anaconda if you prefer) before executing the following commands.
 ```
 git clone https://github.com/Qiuben/TALineNet
 
