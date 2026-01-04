@@ -36,21 +36,27 @@ pip install wandb pandas plotly opencv-python tabulate pycocotools bbox-visualiz
 
 **Baseline**
 
-`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=False model.backbone.with_lstm=False hardware.gpus=0`
+```
+python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=False model.backbone.with_lstm=False hardware.gpus=0
+```
 
 **With Recurrent Blocks**
 
-`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=False model.backbone.with_lstm=True hardware.gpus=0`
+```
+python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=False model.backbone.with_lstm=True hardware.gpus=0
+```
 
 
 **With LBD**
-
-`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=True model.backbone.with_lstm=False hardware.gpus=0`
-
+```
+python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=True model.backbone.with_lstm=False hardware.gpus=0`
+```
 
 **With Both**
 
-`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=True model.backbone.with_lstm=True hardware.gpus=0`
+```
+python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=True model.backbone.with_lstm=True hardware.gpus=0
+```
 
 #### Training on Ev-WireframeSeq
 
