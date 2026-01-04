@@ -57,4 +57,7 @@ For ease of reproducibility, you are suggested to install miniconda (or anaconda
 To train on the Ev-WireframeSeq dataset, simply change the dataset argument from `Line_seq` to `Wireframe_seq` in any of the commands above.
 
 ### Testing
-
+'''
+python validation.py dataset=Wireframe_seq +experiment/Line_seq="default.yaml" hardware.gpus=0 \
+checkpoint='checkpoints/kza3was7/checkpoints/epoch019_msAP_27.02.ckpt'
+'''
