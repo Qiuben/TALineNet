@@ -16,17 +16,17 @@ Put the downloaded datasets to your_datasets_path.
 
 ## Installation
 For ease of reproducibility, you are suggested to install miniconda (or anaconda if you prefer) before following executing the following commands.
+```
+git clone https://github.com/Qiuben/TALineNet
 
-`git clone https://github.com/Qiuben/TALineNet`
+cd TALineNet
 
-`cd TALineNet`
+conda create -y -n TALineNet python=3.9
 
-`conda create -y -n TALineNet python=3.9`
+pip install torch==2.1.1 torchvision==0.16.1 torchdata==0.7.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
 
-`pip install torch==2.1.1 torchvision==0.16.1 torchdata==0.7.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118`
-
-`pip install wandb pandas plotly opencv-python tabulate pycocotools bbox-visualizer StrEnum hydra-core einops torchdata tqdm numba h5py hdf5plugin lovely-tensors tensorboardX pykeops scikit-learn ipdb timm opencv-python-headless pytorch_lightning==1.8.6 numpy==1.26.3`
-
+pip install wandb pandas plotly opencv-python tabulate pycocotools bbox-visualizer StrEnum hydra-core einops torchdata tqdm numba h5py hdf5plugin lovely-tensors tensorboardX pykeops scikit-learn ipdb timm opencv-python-headless pytorch_lightning==1.8.6 numpy==1.26.3
+```
 
 
 ## Training and Testing
@@ -57,7 +57,7 @@ For ease of reproducibility, you are suggested to install miniconda (or anaconda
 To train on the Ev-WireframeSeq dataset, simply change the dataset argument from `Line_seq` to `Wireframe_seq` in any of the commands above.
 
 ### Testing
-'''
+```
 python validation.py dataset=Wireframe_seq +experiment/Line_seq="default.yaml" hardware.gpus=0 \
 checkpoint='checkpoints/kza3was7/checkpoints/epoch019_msAP_27.02.ckpt'
-'''
+```
