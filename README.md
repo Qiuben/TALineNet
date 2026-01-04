@@ -1,5 +1,3 @@
-# TALineNet
-
 # TALineNet: Temporally-Aware Continuous Line Segment Detection in Event Streams
 This repository contains the official PyTorch implementation of the paper: “TALineNet: Temporally-Aware Continuous Line Segment
 Detection in Event Streams”
