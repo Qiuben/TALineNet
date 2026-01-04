@@ -54,7 +54,7 @@ train with both
 
 #### Training on Ev-WireframeSeq
 
-To train on the Ev-WireframeSeq dataset, simply change the dataset argument from Line_seq to Wireframe_seq in any of the commands above.
+To train on the Ev-WireframeSeq dataset, simply change the dataset argument from `Line_seq` to `Wireframe_seq` in any of the commands above.
 
 ### Testing
 
