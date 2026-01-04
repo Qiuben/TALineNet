@@ -32,7 +32,7 @@ For ease of reproducibility, you are suggested to install miniconda (or anaconda
 ## Training and Testing
 
 ### Training
-train Ev-LineSeq:
+#### Training on Ev-LineSeq
 
 baseline
 
@@ -52,7 +52,9 @@ train with both
 
 `python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=True model.backbone.with_lstm=True hardware.gpus=0`
 
-if train model on Ev-WireframeSeq, change the dataset to 'Wireframe_seq'
+#### Training on Ev-WireframeSeq
+
+To train on the Ev-WireframeSeq dataset, simply change the dataset argument from Line_seq to Wireframe_seq in any of the commands above.
 
 ### Testing
 
