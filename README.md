@@ -13,8 +13,6 @@ This link provides the event representations, which is ready for direct network 
 
 
 ## Installation
-We have trained and tested our models on CUDA 11.8, Python 3.10.14, torch 1.10.1.
-
 For ease of reproducibility, you are suggested to install miniconda (or anaconda if you prefer) before following executing the following commands.
 
 `git clone https://github.com/Qiuben/TALineNet`
