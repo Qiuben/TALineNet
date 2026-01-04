@@ -30,4 +30,14 @@ For ease of reproducibility, you are suggested to install miniconda (or anaconda
 
 
 ## Training and Testing
+train Ev-LineSeq:
+baseline
+`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=False model.backbone.with_lstm=False hardware.gpus=0`
+train with recurrent blocks
+`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=False model.backbone.with_lstm=True hardware.gpus=0`
+train with LBD
+`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=True model.backbone.with_lstm=False hardware.gpus=0`
+train with both
+`python train.py dataset=Line_seq +experiment/Line_seq="default.yaml" model.with_mask=True model.backbone.with_lstm=True hardware.gpus=0`
 
+if train model on Ev-WireframeSeq, change the dataset to 'Wireframe_seq'
