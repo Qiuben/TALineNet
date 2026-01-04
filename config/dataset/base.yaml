@@ -1,0 +1,25 @@
+name: ???
+path: ???
+train:
+  sampling: 'mixed' # ('random', 'stream', 'mixed')
+  random:
+    weighted_sampling: False
+  mixed:
+    w_stream: 1
+    w_random: 1
+eval:
+  sampling: 'rand'
+data_augmentation:
+  random:
+    prob_hflip: 0.5
+    rotate:
+      prob: 0.5
+      clockwise_prob: 0.5
+      counterclockwise_prob: 0.5
+
+  stream:
+    prob_hflip: 0.5
+    rotate:
+      prob: 0.5
+      clockwise_prob: 0.5
+      counterclockwise_prob: 0.5

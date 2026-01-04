@@ -1,0 +1,126 @@
+# @package _global_
+defaults:
+  - override /model: rnndet
+
+ENCODER:
+  ANG_TH: 0.0
+  BACKGROUND_WEIGHT: 0.0
+  DIS_TH: 2
+  NUM_STATIC_NEG_LINES: 0
+  NUM_STATIC_POS_LINES: 300
+
+
+model:
+  with_mask: True
+  backbone:
+    with_lstm: True
+    hourglass_stack_num: 2 
+    inplanes: 64
+    num_feats: 256
+    dim_loi: 128
+    dim_fc: 1024
+    dis_th : 5
+    n_dyn_junc: 300
+    junc_thresh: 0.008
+    n_dyn_posl: 300
+    n_dyn_negl: 300
+    n_pts0: 32
+    n_pts1: 8
+    head_size: [3, 1, 1, 2, 2]
+    # in HAWP
+    num_blocks_hg: 1
+    num_stacks: 2
+    depth: 4
+    name: MaxViTRNN
+    compile:
+      enable: False
+      args:
+        mode: reduce-overhead
+    input_channels: 20
+    enable_masking: False
+    partition_split_32: 2
+    embed_dim: 64
+    dim_multiplier: [1, 2, 4, 8]
+    # in RVT
+    num_blocks: [1, 1, 1, 1]
+    T_max_chrono_init: [4, 8, 16, 32]
+    stem:
+      patch_size: 4
+    stage:
+      downsample:
+        type: patch
+        overlap: True
+        norm_affine: True
+      attention:
+        use_torch_mha: False
+        partition_size: ???
+        dim_head: 32
+        attention_bias: True
+        mlp_activation: gelu
+        mlp_gated: False
+        mlp_bias: True
+        mlp_ratio: 4
+        drop_mlp: 0
+        drop_path: 0
+        ls_init_value: 1e-5
+      lstm:
+        dws_conv: False
+        dws_conv_only_hidden: True
+        dws_conv_kernel_size: 3
+        drop_cell_update: 0
+  fpn:
+    name: PAFPN
+    compile:
+      enable: False
+      args:
+        mode: reduce-overhead
+    depth: 0.67 # round(depth * 3) == num bottleneck blocks
+    # stage 1 is the first and len(num_layers) is the last
+    in_stages: [2, 3, 4]
+    depthwise: False
+    act: "silu"
+  head:
+      name: YoloX
+      compile:
+        enable: False
+        args:
+          mode: reduce-overhead
+      depthwise: False
+      act: "silu"
+    
+  lpn:
+    num_feats: 256
+    order: 1
+    junc_score_thresh: 0.008
+    line_score_thresh: 0.0
+    junc_max_num: 300
+    line_max_num: 5000
+    num_pos_proposals: 300
+    num_neg_proposals: 300
+    nms_size: 3
+    n_pts: 32
+
+
+  ENCODER:
+    DIS_TH: 2
+    ANG_TH: 0.0
+    NUM_STATIC_POS_LINES: 300
+    NUM_STATIC_NEG_LINES: 0
+    BACKGROUND_WEIGHT: 0.0
+
+  postprocess:
+
+    confidence_threshold: 0.1
+    nms_threshold: 0.45
+
+# Train configurations
+loss_weights: {
+  'loss_md': 1.0,  # angle regression
+  'loss_dis': 1.0,  # dis   regression
+  'loss_res': 1.0,  # residual regression
+  'loss_joff': 0.25,  # joff  regression
+  'loss_jloc': 8.0,  # jloc  classification
+  'loss_pos': 1.0,  # pos   classification
+  'loss_neg': 1.0  # neg   classification
+}
+
