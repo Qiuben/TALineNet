@@ -84,7 +84,9 @@ def main(config: DictConfig):
     if config.wandb.artifact_name is not None:
         ckpt_path = get_ckpt_path(logger, wandb_config=config.wandb)
 
-    print(colored('ckpt_path:{}'.format(ckpt_path), 'cyan'))
+        print(colored('ckpt_path:{}'.format(ckpt_path), 'cyan'))
+    else:
+        ckpt_path = None
 
     # ---------------------
     # Model
