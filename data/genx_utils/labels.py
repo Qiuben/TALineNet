@@ -8,7 +8,6 @@ import torch as th
 from einops import rearrange
 from torch.nn.functional import pad
 import copy
-from termcolor import colored
 
 
 class ObjectLabelBase:
